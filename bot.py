@@ -74,12 +74,14 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/JoinOT"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")
+                        InlineKeyboardButton("Main Channel", url="https://t.me/Tamil_Mvs_Offl")
+                    ],[
+                        InlineKeyboardButton("Movies Channel", url="https://t.me/+AC2fLsEes9A1NDU1"),
+                        InlineKeyboardButton("Discussion Group", url="https://t.me/+EVI0nUzt1yljZGU1")
                     ],
                     [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
+                        InlineKeyboardButton("About Botss", callback_data="aboutbot"),
+                        InlineKeyboardButton("Official Channels", callback_data="aboutdevs")
                     ]
                 ]
             )
@@ -120,7 +122,7 @@ async def main(bot: Client, message: Message):
                 return
 
         if message.from_user.id in Config.BANNED_USERS:
-            await message.reply_text("Sorry, You are banned!\n\nContact [Support Group](https://t.me/JoinOT)",
+            await message.reply_text("Sorry, You are banned!\n\nContact [Discussion Group](https://t.me/Tamil_Mvs_Offl)",
                                      disable_web_page_preview=True)
             return
 
@@ -314,12 +316,12 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Source Codes of Bot",
-                                             url="https://github.com/AbirHasan2005/PyroFilesStoreBot")
+                        InlineKeyboardButton("Movie Filter Bot",
+                                             url="https://t.me/Tamil_Mvs_Filter_bot")
                     ],
                     [
                         InlineKeyboardButton("Go Home", callback_data="gotohome"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
+                        InlineKeyboardButton("Official Channels", callback_data="aboutdevs")
                     ]
                 ]
             )
@@ -332,11 +334,11 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Source Codes of Bot",
-                                             url="https://github.com/AbirHasan2005/PyroFilesStoreBot")
+                        InlineKeyboardButton("Movie Filter Bot",
+                                             url="https://t.me/Tamil_Mvs_Filter_bot")
                     ],
                     [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
+                        InlineKeyboardButton("About Bots", callback_data="aboutbot"),
                         InlineKeyboardButton("Go Home", callback_data="gotohome")
                     ]
                 ]
@@ -350,12 +352,12 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/JoinOT"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")
+                        InlineKeyboardButton("Discussion Group", url="https://t.me/+EVI0nUzt1yljZGU1"),
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/Tamil_Mvs_Offl")
                     ],
                     [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
+                        InlineKeyboardButton("About Bots", callback_data="aboutbot"),
+                        InlineKeyboardButton("Official Channels", callback_data="aboutdevs")
                     ]
                 ]
             )
@@ -371,7 +373,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 user = await bot.get_chat_member(channel_chat_id, cmd.message.chat.id)
                 if user.status == "kicked":
                     await cmd.message.edit(
-                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/JoinOT).",
+                        text="Sorry Sir, You are Banned to use me. Contact my [Discussion Group](https://t.me/+EVI0nUzt1yljZGU1).",
                         disable_web_page_preview=True
                     )
                     return
@@ -383,7 +385,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                                InlineKeyboardButton("⚠️  JOIN Updates Channel ⚠️", url=invite_link.invite_link)
                             ],
                             [
                                 InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
@@ -394,7 +396,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 return
             except Exception:
                 await cmd.message.edit(
-                    text="Something went Wrong. Contact my [Support Group](https://t.me/JoinOT).",
+                    text="Something went Wrong. Contact my [Discussion Group](https://t.me/+EVI0nUzt1yljZGU1).",
                     disable_web_page_preview=True
                 )
                 return
@@ -404,12 +406,12 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/JoinOT"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")
+                        InlineKeyboardButton("Discussion Group", url="https://t.me/+EVI0nUzt1yljZGU1"),
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/Tamil_Mvs_Offl")
                     ],
                     [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
+                        InlineKeyboardButton("About Bots", callback_data="aboutbot"),
+                        InlineKeyboardButton("Official Channels", callback_data="aboutdevs")
                     ]
                 ]
             )
@@ -449,7 +451,7 @@ async def button(bot: Client, cmd: CallbackQuery):
         if message_ids is None:
             await cmd.answer("Batch List Empty!", show_alert=True)
             return
-        await cmd.message.edit("Please wait, generating batch link ...")
+        await cmd.message.edit("Please wait, generating batch link ...\n\n`Join :`@Tamil_MVs_OTT")
         await save_batch_media_in_channel(bot=bot, editable=cmd.message, message_ids=message_ids)
         MediaList[f"{str(cmd.from_user.id)}"] = []
 
