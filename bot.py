@@ -385,7 +385,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("⚠️  JOIN Updates Channel ⚠️", url=invite_link.invite_link)
+                                InlineKeyboardButton("⚠️ JOIN Updates Channel ⚠️", url=invite_link.invite_link)
                             ],
                             [
                                 InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
